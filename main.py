@@ -1,6 +1,9 @@
 import Card
 import Deck
 import Player
+import Round
+
+round_one = Round.Round()
 
 new_deck = Deck.Deck()
 new_deck.show()
@@ -46,10 +49,12 @@ if player_number == 5:
             player.hand.append(new_deck.deck[0])
             del new_deck.deck[0]
 
+# TODO: choose a card to keep and remove that card from hand
+# TODO: once the players pass only one card, put said card automatically into chosen pile and start scoring
 
 print("{} cards in the deck now".format(len(new_deck.deck)))
 for player in players:
-    print("\nPlayer {}'s hand for round 1".format(player.number))
+    print("\nPlayer {}'s starting hand".format(player.number))
     player.show_hand()
 
 Player.pass_hand(players)
@@ -58,6 +63,21 @@ for player in players:
     print("\nPlayer {}'s hand after passing".format(player.number))
     player.show_hand()
 
+for player in players:
+    print("\nPlayer {}'s cards:".format(player.number))
+    player.show_cards()
+    # score each player (excluding maki scoring which is done below
+    player.score_cards()
+    print("\nPlayer {}'s score before maki counting".format(player.number))
+    print(player.score)
+    print("\nPlayer {}'s maki roll count".format(player.number))
+    print(player.maki)
+
+# score maki
+round_one.score_maki(players)
+for player in players:
+    print("\nPlayer {}'s score after maki counting".format(player.number))
+    print(player.score)
 
 
 

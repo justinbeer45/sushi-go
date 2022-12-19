@@ -12,7 +12,7 @@ class Deck:
         for i in range(14):
             self.deck.append(Card.Card("Sashimi"))
         for i in range(14):
-            self.deck.append(Card.Card("Dumpling"))
+            self.deck.append(Card.Card("Dumplings"))
         for i in range(12):
             self.deck.append(Card.Card("2 Maki rolls"))
         for i in range(8):
