@@ -46,7 +46,6 @@ while len(players[0].hand) != 0:
     for player in players:
         print("\nPlayer {}'s hand after passing".format(player.number))
         player.show_hand()
-# TODO: once the players pass only one card, put said card automatically into chosen pile and start scoring
 
 for player in players:
     print("\nPlayer {}'s cards:".format(player.number))
