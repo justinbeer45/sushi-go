@@ -38,15 +38,14 @@ print("{} cards in the deck now".format(len(new_deck.deck)))
 for player in players:
     print("\nPlayer {}'s starting hand".format(player.number))
     player.show_hand()
-
-while len(players[0].hand) != 0:
+# TODO: check that all players hands are empty (more than two players)
+while len(players[0].hand) != 0 and len(players[1].hand) != 0:
     for player in players:
-        player.choose_a_card()
+        player.choose_cards()
     Player.pass_hand(players)
     for player in players:
         print("\nPlayer {}'s hand after passing".format(player.number))
         player.show_hand()
-# TODO: once the players pass only one card, put said card automatically into chosen pile and start scoring
 
 for player in players:
     print("\nPlayer {}'s cards:".format(player.number))
