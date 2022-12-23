@@ -85,11 +85,25 @@ class Player:
             self.score += 15
         self.score += nigiri
 
-    def choose_a_card(self):
+    # display hand/cards method
+    def display_hand_and_cards(self):
         print("\nHere is your hand player {}: ".format(self.number))
         self.show_hand()
         print("\nHere are your cards: ")
         self.show_cards()
+
+    def use_chopsticks(self):
+        self.display_hand_and_cards()
+        chopsticks = 0
+        for c in self.cards:
+            if c.card_type == "Chopsticks":
+                chopsticks += 1
+        if chopsticks > 0:
+            print("\nYou have {} chopsticks in your hand. Would you like to use one this turn?".format(chopsticks))
+            if input("\n[yes/no]").lower() == "yes":
+                return True
+
+    def choose_one_card(self):
         input_correct = False
         counter = 0
         card_choice = None
@@ -106,3 +120,19 @@ class Player:
             counter += 1
         self.cards.append(card_choice)
         self.hand.remove(card_choice)
+
+    def chopsticks_back_to_hand(self):
+        for c in self.cards:
+            if c.card_type == "Chopsticks":
+                self.hand.append(c)
+                self.cards.remove(c)
+
+    def choose_cards(self):
+        use_chopsticks_choice = self.use_chopsticks()
+        if use_chopsticks_choice:
+            self.choose_one_card()
+            self.choose_one_card()
+            self.chopsticks_back_to_hand()
+        else:
+            self.display_hand_and_cards()
+            self.choose_one_card()
