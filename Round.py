@@ -54,6 +54,11 @@ class Round:
                 if player.maki == sorted_maki_rolls[1]:
                     player.score += points_for_second_most_maki
 
+    def score_without_maki(self, players):
+        for player in players:
+            # score each player (excluding maki scoring which is done below
+            player.score_cards()
+
 
 
 

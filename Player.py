@@ -93,7 +93,6 @@ class Player:
         self.show_cards()
 
     def use_chopsticks(self):
-        self.display_hand_and_cards()
         chopsticks = 0
         for c in self.cards:
             if c.card_type == "Chopsticks":
@@ -128,11 +127,11 @@ class Player:
                 self.cards.remove(c)
 
     def choose_cards(self):
+        self.display_hand_and_cards()
         use_chopsticks_choice = self.use_chopsticks()
         if use_chopsticks_choice:
             self.choose_one_card()
             self.choose_one_card()
             self.chopsticks_back_to_hand()
         else:
-            self.display_hand_and_cards()
             self.choose_one_card()
