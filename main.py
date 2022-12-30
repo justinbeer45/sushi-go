@@ -32,7 +32,7 @@ round_one.score_maki(game.players)
 game.display_scores()
 
 # after all three rounds, score pudding
-
+game.score_puddings()
 
 
 
