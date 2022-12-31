@@ -2,6 +2,7 @@ import Deck
 import Player
 import Round
 import Game
+import tests
 
 # Start game
 game = Game.Game()
@@ -9,6 +10,7 @@ game = Game.Game()
 # Initialize and shuffle deck of cards
 card_deck = Deck.Deck()
 card_deck.shuffle()
+
 
 # Start first round
 round_one = Round.Round()

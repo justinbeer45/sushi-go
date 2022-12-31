@@ -1,6 +1,7 @@
 import Card
 import random
 
+
 class Deck:
     def __init__(self):
         self.deck = []
@@ -50,5 +51,3 @@ class Deck:
             del self.deck[random_card_number]
         # assign existing deck to shuffled deck
         self.deck = shuffled_deck
-
-
