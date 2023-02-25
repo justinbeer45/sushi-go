@@ -3,27 +3,28 @@ class Round:
         self.maki_rankings = {}
 
     def deal_starting_hand(self, players, new_deck):
+        # TODO: dictionary of number of players to cards in hand
         player_number = len(players)
         if player_number == 2:
             for i in range(10):
                 for player in players:
-                    player.hand.append(new_deck.deck[0])
-                    del new_deck.deck[0]
+                    player.hand.append(new_deck.cards[0])
+                    del new_deck.cards[0]
         if player_number == 3:
             for i in range(9):
                 for player in players:
-                    player.hand.append(new_deck.deck[0])
-                    del new_deck.deck[0]
+                    player.hand.append(new_deck.cards[0])
+                    del new_deck.cards[0]
         if player_number == 4:
             for i in range(8):
                 for player in players:
-                    player.hand.append(new_deck.deck[0])
-                    del new_deck.deck[0]
+                    player.hand.append(new_deck.cards[0])
+                    del new_deck.cards[0]
         if player_number == 5:
             for i in range(7):
                 for player in players:
-                    player.hand.append(new_deck.deck[0])
-                    del new_deck.deck[0]
+                    player.hand.append(new_deck.cards[0])
+                    del new_deck.cards[0]
 
     def score_maki(self, players):
         players_with_most_maki_rolls = 0

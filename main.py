@@ -37,5 +37,5 @@ game.display_scores()
 game.score_puddings()
 
 
-
+# TODO: two columns for cards
 
